@@ -1,2 +1,2 @@
 # Data-Struction-Java-Version
-数据机构Java实现
+数据结构Java实现
