@@ -14,7 +14,7 @@ public class PrintN {
 
     public static void main(String[] args) {
            // printN();
-           printNDG(1000000000);
+           printNDG(100000000);
     }
 
     /**
