@@ -1,3 +1,5 @@
+package Algorithm;
+
 import java.util.Scanner;
 
 /**
@@ -10,21 +12,25 @@ import java.util.Scanner;
  *       当然，递归会让程序足够简洁
  *
  */
+
 public class PrintN {
 
+    /**
+     * 测试
+     * @param args
+     */
     public static void main(String[] args) {
-           // printN();
-           printNDG(100000000);
+        int N = 100;
+        printN(N);
+//          printNDG(N);
     }
 
     /**
      * 算法一,普通循环
      */
-    public static void printN(){
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+    public static void printN(int N){
         int i = 1;
-        while(i<=n){
+        while(i<=N){
             System.out.println(i++);
         }
         return;
@@ -33,10 +39,10 @@ public class PrintN {
     /**
      * 算法二，递归实现
      */
-    public static void printNDG(int n){
-        if(n!=0){
-            printNDG(n-1);
-            System.out.println(n);
+    public static void printNDG(int N){
+        if(N != 0){
+            printNDG(N-1);
+            System.out.println(N);
         }
         return;
     }
