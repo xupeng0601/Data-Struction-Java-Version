@@ -1,6 +1,5 @@
 package Algorithm;
 
-import java.util.Scanner;
 
 /**
  * @author xupeng
@@ -20,9 +19,9 @@ public class PrintN {
      * @param args
      */
     public static void main(String[] args) {
-        int N = 100;
-        printN(N);
-//          printNDG(N);
+        int N = 1000000000;
+//        printN(N);
+        printNDG(N);
     }
 
     /**
