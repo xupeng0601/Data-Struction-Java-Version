@@ -7,7 +7,10 @@ package Algorithm; /**
 /**
 多项式函数:
 Q:计算一个多项式在给定x点的值  function -> f,f1
-  f1的效率比f2慢大概一个数量级的样子，应为f1涉及指数运算，比较耗费时间
+  f1的
+
+
+ 效率比f2慢大概一个数量级的样子，应为f1涉及指数运算，比较耗费时间
 Q:
 */
 public class Polynomial {
@@ -29,16 +32,19 @@ public class Polynomial {
         }
 
         start = System.currentTimeMillis();
+        double res = 0.0;
         for (int i = 0; i <COUNT ; i++) {
-            f1(N,a,X);
+            res= f1(N, a, X);
         }
+        System.out.println(res);
         stop = System.currentTimeMillis();
         System.out.println((stop - start)/COUNT/1000);
 
         start = System.currentTimeMillis();
         for (int i = 0; i <COUNT ; i++) {
-            f2(N,a,X);
+            res  =  f2(N,a,X);
         }
+        System.out.println(res);
         stop = System.currentTimeMillis();
         System.out.println((stop - start)/COUNT/1000);
 
@@ -54,29 +60,20 @@ public class Polynomial {
      * @return
      */
     public static double f1(int n,double a[],double x){
-        double sum = a[0];
-        while(n==0){
+        double sum = 0.0;
+        while(n>=0){
             sum += a[n]*Math.pow(x,n--);
         }
         return sum;
     }
 
 
-    /**
-     *算法二  秦九韶提公因子算法
-     * @param n   阶数
-     * @param a   系数集合
-     * @param x   自变量
-     * @return
-     */
     public static double f2(int n,double a[],double x){
         double sum = a[n];
-        while(n==0){
-            sum = (a[n-1] + sum*x);
-            n--;
+        while(n > 0){
+            sum = a[--n] + sum*x;
         }
         return sum;
     }
-
 
 }
